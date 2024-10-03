@@ -1,0 +1,510 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    perspective: 700px;
+}
+
+.headercontent{
+    display: flex;
+    width: 100%;
+    /* height: 70px; */
+    margin-top: 30px ;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Playwrite DE Grund", cursive; 
+    align-items: baseline ;
+    align-items: center;
+}
+.x{
+    font-size: 40px;
+}
+.logo{
+    color: rgb(177, 102, 102);
+}
+.list{
+    width: 80%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+.list li{
+    line-height: 44px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+.headercontent h2{
+    margin-right: 45px ;
+}
+.border{
+    font-size: 20px;
+    color: rgb(177, 102, 102);
+}
+/* Top and Bottom Line */
+.border::before, .border::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(177, 102, 102);
+    left: 0;
+    transition: transform 1s ease;
+}
+
+.border::before {
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.border::after {
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/* Left and Right Line */
+.border span::before, .border span::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: rgb(177, 102, 102);
+    top: 0;
+    transition: transform 1s ease;
+}
+.border span::before {
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: center;
+}
+.border a{
+    color: rgb(204, 110, 110);
+    text-decoration: none;
+}
+.border span::after {
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: center;
+}
+
+/* Hover Effect for All Sides */
+.border:hover::before {
+    transform: scaleX(1);
+}
+
+.border:hover::after {
+    transform: scaleX(1);
+}
+
+.border:hover span::before {
+    transform: scaleY(1);
+}
+
+.border:hover span::after {
+    transform: scaleY(1);
+}
+
+.div1{
+    display: inline;
+    position: relative;
+    padding: 5px;
+}
+
+.zero{
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    font-size: 15px;
+    text-align: start;
+    color: rgb(177, 102, 102);
+}
+main{
+    margin-top: 30px;
+}
+.heroImage{
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+     border-radius: 10% 10%;
+    animation-name: change;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    box-shadow: 5px 5px 10px 10px rgb(88, 88, 88);
+}
+@keyframes change{
+    0%{
+        background-image: url("../image/mercedes.avif");
+        
+    }
+    15%{
+        background-image: url("../image/bmw1.jpg");
+    }
+    30%{
+        background-image: url("../image/ford.jpg");
+    }
+    55%{
+        background-image: url("../image/Chevorlat.avif");
+    }
+    70%{
+        background-image: url("../image/honda.jpg")
+    }
+    85%{
+        background-image: url("../image/audi.webp")
+    }
+    100%{
+        background-image: url("../image/mercedes.avif");
+    }
+}
+ .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: relative;
+    top:0;
+    left: 0;
+    border-radius: 10% 10%;  
+} 
+.herocontant{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+
+    text-align: center;
+}
+.herocontant h2{
+    font-size: 50px;
+    font-family: "Playwrite DE Grund", cursive;
+    font-style: italic;
+}
+.herocontant input{
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(177, 102, 102);
+    height: 40px;
+    color:white ;
+    font-family: "Playwrite DE Grund", cursive;
+    border-radius: 10px ;
+}
+
+/*////////////////////////*/
+.most{
+    margin-top: 120px;
+    padding: 50px;
+}
+.line{
+    width: 100px;
+    height: 2px;
+    margin: auto;
+    background-color: rgb(177, 102, 102);
+}
+.title{
+    font-size: 30px;
+    font-family: "Playwrite DE Grund", cursive;
+    font-style: oblique;
+    text-align: center;
+}
+
+.mostCars{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+.caritem{
+    padding: 50px;
+    border-radius: 30px 5px;
+}
+.caritem img{
+    border-radius: 30px 5px ;
+}
+.carContent{
+    overflow: auto;
+}
+.carContent p{
+    font-size: large;
+    font-family: "Playwrite DE Grund", cursive;
+    display: inline;
+}
+
+.carContent i{
+    float: right;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    margin: 0px 10px;
+    visibility: hidden;
+    
+}
+.caritem:hover i{
+    transition: 2s;
+    visibility: visible;
+}
+
+
+
+/*////////////////////////////////////////////////////////*/
+
+.marketing{
+    width: 100%; 
+    margin: auto; 
+    display: flex;
+    justify-content: center;
+}
+
+.marketingparent{
+    width: 90%;
+
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.market{
+    width: 50%;
+    background-color: blanchedalmond;
+    padding: 30px;
+}
+.market i {
+    font-size: 50px;
+    color: rgb(104, 24, 24)
+}
+.market span{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Playwrite DE Grund", cursive;
+
+}
+.letter{
+    font-size: 20px;
+}
+.lines{
+    margin-top: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.p{
+    
+    margin: 5px;
+    width: 50px;
+}
+.discount{
+    background-image: url("../image/mercedes-amg-gt-c192-pad-stage-3840x3840-06-2023.avif");
+    background-size: cover;
+    padding: 30px;
+    width: 22%;
+    height: 100%;
+    transition: 1s;
+    color: rgb(104, 24, 24);
+    font-size: 20px;
+
+}
+.d{
+    background-image: url("../image/bmw1.jpg");
+    background-size: cover;
+    
+}
+.discount:hover{
+    transform: scale(1.1,1.1);
+}
+/*/////////////////////////////////*/ 
+.feature{
+
+    width: 90%;
+    display: flex;
+    
+    justify-content: space-evenly;
+}
+.centerf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+}
+.featureitem{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Playwrite DE Grund", cursive;
+}
+.itemicon{
+    font-size: 30px;
+    margin: 10px;
+}
+.itemicon i{
+    transition: 1s;
+    color: gray;
+}
+.featureitem:hover i{
+    color: rgb(155, 77, 77);
+    transform: scale(1.2,1.2);
+}
+.vertical{
+    transform: rotate(90);
+}
+.herizontal{
+    width: 90%;
+    margin: auto;
+}
+.grey{
+    color: gray;
+}
+
+
+/*  */
+.prod{
+    margin-top: 100px;
+}
+.carsproduct{
+    margin: 30px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 80px;
+}
+.productitem{
+    /* position: relative; */
+    /* padding: 30px; */
+    height: 500px;
+
+}
+.productitem p{
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: "Playwrite DE Grund", cursive;
+}
+.trans{
+    position: relative;
+    height: 300px;
+    transition: 1s;
+    transform-style: preserve-3d ;
+}
+.frontproduct, .backproduct{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    border-radius:  40px 40px;
+}
+.frontproduct{
+    background-image: url("../image/bmw1.jpg");
+    background-size: cover;
+    height: 300px;
+    
+    z-index: 1 ;
+    backface-visibility: hidden;
+}
+.backproduct{
+    transform: rotateY(180deg);
+    background-image: url("../image/bmw1.jpg");
+    background-size: cover;
+    height: 300px;
+}
+.over{
+    border-radius:  40px 40px;
+    background-color: rgba(0, 0, 0, 0.356);
+    width: 100%;
+    height: 100%;
+    color:rgb(36, 127, 212);
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.trans:hover{
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:900px) {
+    .mostCars{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        column-gap: 20px;
+    }
+    .carsproduct{
+        margin: 30px 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 80px;
+    }
+}
+
+@media (max-width: 610px){
+    .headercontent{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+    }
+    .list{
+        display: flex;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+        align-content: center;
+    }
+    .list li{ 
+        text-align: center;
+    }
+    .mostCars{
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .marketingparent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .market{
+        width: 80%;
+    }
+    .discount{
+        margin: 20px auto;
+        width: 80%; 
+        height: 250px;
+    }
+    .carsproduct{
+        margin: 30px 100px;
+        display: flex;
+        flex-direction: column;
+       
+    }
+}
